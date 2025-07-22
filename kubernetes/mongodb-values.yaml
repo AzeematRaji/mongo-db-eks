@@ -1,0 +1,8 @@
+architecture: replicaset
+repliCount: 3
+persistence:
+  enabled: true
+  storageClass: "gp2"
+  size: "10Gi"
+auth:
+  rootPassword: "exampleRootPassword"
