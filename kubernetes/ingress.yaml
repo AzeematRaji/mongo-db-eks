@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mongoexpress-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: mongo.51.21.158.114.nip.io  
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mongoexpress
+                port:
+                  number: 8081
+
+
+

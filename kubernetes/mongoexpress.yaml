@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongoexpress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongoexpress
+  template:
+    metadata:
+      labels:
+        app: mongoexpress
+    spec:
+      containers:
+      - name: mongoexpress
+        image: mongo-express:latest
+        ports:
+        - containerPort: 8081
+        env:
+        - name: ME_CONFIG_MONGODB_ADMINUSERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongoexpress-secret
+              key: mongo-user
+        - name: ME_CONFIG_MONGODB_ADMINPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongoexpress-secret
+              key: mongo-password
+        - name: ME_CONFIG_MONGODB_SERVER
+          valueFrom:
+            configMapKeyRef:
+              name: mongoexpress-config
+              key: mongo-host
+        - name: ME_CONFIG_MONGODB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: mongoexpress-config
+              key: mongo-port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongoexpress
+spec:
+  selector:
+    app: mongoexpress
+  ports:
+    - port: 8081
+      targetPort: 8081
+  type: ClusterIP

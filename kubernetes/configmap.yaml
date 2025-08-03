@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongoexpress-config
+data:
+  mongo-host: my-mongodb
+  mongo-port: "27017"
