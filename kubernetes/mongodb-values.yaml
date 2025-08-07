@@ -1,8 +1,8 @@
 architecture: replicaset
-repliCount: 3
+replicaCount: 3
 persistence:
   enabled: true
-  storageClass: "ebs-sc"
+  storageClass: "gp2"
   size: "10Gi"
 auth:
   rootPassword: "exampleRootPassword"
