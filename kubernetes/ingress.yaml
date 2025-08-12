@@ -5,8 +5,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: mongo.51.21.158.114.nip.io  
-      http:
+    - http:
         paths:
           - path: /
             pathType: Prefix
@@ -15,6 +14,3 @@ spec:
                 name: mongoexpress
                 port:
                   number: 8081
-
-
-

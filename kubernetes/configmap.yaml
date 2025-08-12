@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: mongoexpress-config
 data:
-  mongo-host: my-mongodb
+  mongo-host: my-release-mongodb
   mongo-port: "27017"
