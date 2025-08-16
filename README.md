@@ -1,3 +1,5 @@
+![Architecture Diagram](./mongodb-arch.png)
+
 # MongoDB StatefulSet on AWS EKS with Terraform, Helm & Ingress
 
 This project demonstrates how to deploy a self-hosted **stateful application** (MongoDB) on **Amazon EKS** using **Terraform**, **Helm**, and Kubernetes manifests. It also includes **Mongo Express** as a web-based MongoDB admin interface, exposed via **NGINX Ingress** and AWS **Cloud Load Balancer**.
