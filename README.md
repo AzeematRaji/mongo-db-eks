@@ -1,4 +1,4 @@
-![Architecture Diagram](./mongodb-arch.png)
+![Architecture Diagram](./github.png)
 
 # MongoDB StatefulSet on AWS EKS with Terraform, Helm & Ingress
 
